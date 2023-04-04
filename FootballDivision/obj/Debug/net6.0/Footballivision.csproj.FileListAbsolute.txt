@@ -1,0 +1,15 @@
+C:\Users\shor7\RiderProjects\Footballivision\Footballivision\bin\Debug\net6.0\Footballivision.exe
+C:\Users\shor7\RiderProjects\Footballivision\Footballivision\bin\Debug\net6.0\Footballivision.deps.json
+C:\Users\shor7\RiderProjects\Footballivision\Footballivision\bin\Debug\net6.0\Footballivision.runtimeconfig.json
+C:\Users\shor7\RiderProjects\Footballivision\Footballivision\bin\Debug\net6.0\Footballivision.dll
+C:\Users\shor7\RiderProjects\Footballivision\Footballivision\bin\Debug\net6.0\Footballivision.pdb
+C:\Users\shor7\RiderProjects\Footballivision\Footballivision\obj\Debug\net6.0\Footballivision.csproj.AssemblyReference.cache
+C:\Users\shor7\RiderProjects\Footballivision\Footballivision\obj\Debug\net6.0\Footballivision.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\shor7\RiderProjects\Footballivision\Footballivision\obj\Debug\net6.0\Footballivision.AssemblyInfoInputs.cache
+C:\Users\shor7\RiderProjects\Footballivision\Footballivision\obj\Debug\net6.0\Footballivision.AssemblyInfo.cs
+C:\Users\shor7\RiderProjects\Footballivision\Footballivision\obj\Debug\net6.0\Footballivision.csproj.CoreCompileInputs.cache
+C:\Users\shor7\RiderProjects\Footballivision\Footballivision\obj\Debug\net6.0\Footballivision.dll
+C:\Users\shor7\RiderProjects\Footballivision\Footballivision\obj\Debug\net6.0\refint\Footballivision.dll
+C:\Users\shor7\RiderProjects\Footballivision\Footballivision\obj\Debug\net6.0\Footballivision.pdb
+C:\Users\shor7\RiderProjects\Footballivision\Footballivision\obj\Debug\net6.0\Footballivision.genruntimeconfig.cache
+C:\Users\shor7\RiderProjects\Footballivision\Footballivision\obj\Debug\net6.0\ref\Footballivision.dll
