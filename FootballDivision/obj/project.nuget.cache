@@ -1,8 +1,13 @@
 {
   "version": 2,
-  "dgSpecHash": "Y/mK9boYbtR7JTMVRKso21mIT9knhj/0O5pRDxj+/KFpsY/IACkgqkl5Y1U0SdVAJT4T1gEV9QPKxDWNCem2xg==",
+  "dgSpecHash": "sHt9f/PtXaaI0raAyTm0+2esHiR7YXyAG/xmZse509FpxW7MsQn9XnhWI/AiBXkI+uldISNz+y7zLbtnDagxdQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\shor7\\RiderProjects\\Footballivision\\FootballDivision\\FootballDivision.csproj",
-  "expectedPackageFiles": [],
+  "projectFilePath": "C:\\Users\\nikla\\RiderProjects\\LeagueLeague\\FootballDivision\\FootballDivision.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\nikla\\.nuget\\packages\\microsoft.netcore.app.ref\\6.0.15\\microsoft.netcore.app.ref.6.0.15.nupkg.sha512",
+    "C:\\Users\\nikla\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\6.0.15\\microsoft.windowsdesktop.app.ref.6.0.15.nupkg.sha512",
+    "C:\\Users\\nikla\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\6.0.15\\microsoft.aspnetcore.app.ref.6.0.15.nupkg.sha512",
+    "C:\\Users\\nikla\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\6.0.15\\microsoft.netcore.app.host.win-x64.6.0.15.nupkg.sha512"
+  ],
   "logs": []
 }

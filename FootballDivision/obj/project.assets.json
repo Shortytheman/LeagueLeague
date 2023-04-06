@@ -8,19 +8,19 @@
     "net6.0": []
   },
   "packageFolders": {
-    "C:\\Users\\shor7\\.nuget\\packages\\": {}
+    "C:\\Users\\nikla\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\shor7\\RiderProjects\\Footballivision\\FootballDivision\\FootballDivision.csproj",
+      "projectUniqueName": "C:\\Users\\nikla\\RiderProjects\\LeagueLeague\\FootballDivision\\FootballDivision.csproj",
       "projectName": "FootballDivision",
-      "projectPath": "C:\\Users\\shor7\\RiderProjects\\Footballivision\\FootballDivision\\FootballDivision.csproj",
-      "packagesPath": "C:\\Users\\shor7\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\shor7\\RiderProjects\\Footballivision\\FootballDivision\\obj\\",
+      "projectPath": "C:\\Users\\nikla\\RiderProjects\\LeagueLeague\\FootballDivision\\FootballDivision.csproj",
+      "packagesPath": "C:\\Users\\nikla\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\nikla\\RiderProjects\\LeagueLeague\\FootballDivision\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\shor7\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        "C:\\Users\\nikla\\AppData\\Roaming\\NuGet\\NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net6.0"
@@ -54,12 +54,30 @@
         ],
         "assetTargetFallback": true,
         "warn": true,
+        "downloadDependencies": [
+          {
+            "name": "Microsoft.AspNetCore.App.Ref",
+            "version": "[6.0.15, 6.0.15]"
+          },
+          {
+            "name": "Microsoft.NETCore.App.Host.win-x64",
+            "version": "[6.0.15, 6.0.15]"
+          },
+          {
+            "name": "Microsoft.NETCore.App.Ref",
+            "version": "[6.0.15, 6.0.15]"
+          },
+          {
+            "name": "Microsoft.WindowsDesktop.App.Ref",
+            "version": "[6.0.15, 6.0.15]"
+          }
+        ],
         "frameworkReferences": {
           "Microsoft.NETCore.App": {
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.405\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Users\\nikla\\.dotnet\\sdk\\7.0.202\\RuntimeIdentifierGraph.json"
       }
     }
   }

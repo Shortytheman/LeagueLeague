@@ -9,9 +9,12 @@
     </PropertyGroup>
 
     <ItemGroup>
-      <Folder Include="files\LCK" />
-      <Folder Include="files\LCS" />
-      <Folder Include="files\MSI" />
+      <Folder Include="files\LCK\lowerBracket" />
+      <Folder Include="files\LCK\topBracket" />
+      <Folder Include="files\LCS\lowerBracket" />
+      <Folder Include="files\LCS\topBracket" />
+      <Folder Include="files\MSI\lowerBracket" />
+      <Folder Include="files\MSI\topBracket" />
     </ItemGroup>
 
 </Project>
