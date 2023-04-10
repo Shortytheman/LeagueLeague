@@ -96,50 +96,68 @@ public class Football
         Random rnd = new Random();
 
         //Initial rounds, 1-22 including the last one.
+       
+        try
+        {
         for (int i = 0; i < 22; i++)
         {
             var tempTeams = new List<Team>(Teams);
-
-            using (StreamWriter w = new StreamWriter(directory + league + "/round-" + (i + 1) + ".csv"))
-            {
-                for (int j = 0; j < 6; j++)
+            
+                using (StreamWriter w = new StreamWriter(directory + league + "/round-" + (i + 1) + ".csv"))
                 {
-                    int randomTeam1 = rnd.Next(tempTeams.Count);
-                    int randomTeam2 = rnd.Next(tempTeams.Count);
-                    while (randomTeam1 == randomTeam2)
+                    for (int j = 0; j < 6; j++)
                     {
-                        randomTeam2 = rnd.Next(tempTeams.Count);
-                    }
+                        int randomTeam1 = rnd.Next(tempTeams.Count);
+                        int randomTeam2 = rnd.Next(tempTeams.Count);
+                        while (randomTeam1 == randomTeam2)
+                        {
+                            randomTeam2 = rnd.Next(tempTeams.Count);
+                        }
 
-                    int killsTeam1 = rnd.Next(25);
-                    int killsTeam2 = rnd.Next(25);
-                    while (killsTeam1 == killsTeam2)
-                    {
-                        killsTeam2 = rnd.Next(25);
-                    }
+                        int killsTeam1 = rnd.Next(25);
+                        int killsTeam2 = rnd.Next(25);
+                        while (killsTeam1 == killsTeam2)
+                        {
+                            killsTeam2 = rnd.Next(25);
+                        }
 
-                    w.WriteLine(tempTeams[randomTeam1].Abbreviation + ";" + tempTeams[randomTeam2].Abbreviation + ";" +
-                                killsTeam1 + ";" + killsTeam2);
+                        w.WriteLine(tempTeams[randomTeam1].Abbreviation + ";" + tempTeams[randomTeam2].Abbreviation +
+                                    ";" +
+                                    killsTeam1 + ";" + killsTeam2);
 
-                    if (randomTeam1 < randomTeam2)
-                    {
-                        tempTeams.RemoveAt(randomTeam1);
-                        tempTeams.RemoveAt(randomTeam2 - 1);
-                    }
-                    else
-                    {
-                        tempTeams.RemoveAt(randomTeam1);
-                        tempTeams.RemoveAt(randomTeam2);
+                        if (randomTeam1 < randomTeam2)
+                        {
+                            tempTeams.RemoveAt(randomTeam1);
+                            tempTeams.RemoveAt(randomTeam2 - 1);
+                        }
+                        else
+                        {
+                            tempTeams.RemoveAt(randomTeam1);
+                            tempTeams.RemoveAt(randomTeam2);
+                        }
                     }
                 }
-            }
+        }
+        }
+        catch (Exception e)
+        {
+            Console.WriteLine("Cannot find the requested path.. Try again with a valid Leaguename");
         }
 
 
         Dictionary<string, int> score = new Dictionary<string, int>();
         StreamReader reader = null;
 
-        String[] files = Directory.GetFiles(directory + "/" + league);
+        String[] files = null;
+        
+        try
+        {
+            files = Directory.GetFiles(directory + "/" + league);
+        }
+        catch (Exception e)
+        {
+            Console.WriteLine("Cannot find the league you're referring to.. Try with a different league name.");
+        }
 
         try
         {
@@ -189,14 +207,21 @@ public class Football
         List<String> topBracket = new List<string>();
         List<String> lowerBracket = new List<string>();
 
-        for (int i = 0; i < 6; i++)
+        try
         {
-            //kvp = Key Value Pair
-            var highestWins = score.MaxBy(kvp => kvp.Value);
-            var highestWinsTeam = highestWins.Key;
-            var wins = highestWins.Value;
-            topBracket.Add(highestWinsTeam);
-            score.Remove(highestWinsTeam);
+            for (int i = 0; i < 6; i++)
+            {
+                //kvp = Key Value Pair
+                var highestWins = score.MaxBy(kvp => kvp.Value);
+                var highestWinsTeam = highestWins.Key;
+                var wins = highestWins.Value;
+                topBracket.Add(highestWinsTeam);
+                score.Remove(highestWinsTeam);
+            }
+        }
+        catch (Exception e)
+        {
+            Console.WriteLine("Can't make a library with the requested values.. Try to enter a different league name");
         }
 
         foreach (var teams in score)
@@ -204,87 +229,101 @@ public class Football
             lowerBracket.Add(teams.Key);
         }
 
-        //Additional Rounds, 23-33 including the last one.
-        for (int i = 23; i < 34; i++)
+
+        try
         {
-            var tempTopBracket = new List<String>(topBracket);
-
-            
-            using (StreamWriter top = new StreamWriter(directory + league + "/topBracket/round-" + i + ".csv"))
+            //Additional Rounds, 23-33 including the last one.
+            for (int i = 23; i < 34; i++)
             {
-                for (int j = 0; j < 3; j++)
+                var tempTopBracket = new List<String>(topBracket);
+                using (StreamWriter top = new StreamWriter(directory + league + "/topBracket/round-" + i + ".csv"))
                 {
-                    
-                    int randomTeam1 = rnd.Next(tempTopBracket.Count);
-                    int randomTeam2 = rnd.Next(tempTopBracket.Count);
-                    while (randomTeam1 == randomTeam2)
+                    for (int j = 0; j < 3; j++)
                     {
-                        randomTeam2 = rnd.Next(tempTopBracket.Count);
-                    }
 
-                    int killsTeam1 = rnd.Next(25);
-                    int killsTeam2 = rnd.Next(25);
-                    while (killsTeam1 == killsTeam2)
-                    {
-                        killsTeam2 = rnd.Next(25);
-                    }
+                        int randomTeam1 = rnd.Next(tempTopBracket.Count);
+                        int randomTeam2 = rnd.Next(tempTopBracket.Count);
+                        while (randomTeam1 == randomTeam2)
+                        {
+                            randomTeam2 = rnd.Next(tempTopBracket.Count);
+                        }
 
-                    top.WriteLine(tempTopBracket[randomTeam1] + ";" + tempTopBracket[randomTeam2] + ";" +
-                                  killsTeam1 + ";" + killsTeam2);
-                    
+                        int killsTeam1 = rnd.Next(25);
+                        int killsTeam2 = rnd.Next(25);
+                        while (killsTeam1 == killsTeam2)
+                        {
+                            killsTeam2 = rnd.Next(25);
+                        }
 
-                    if (randomTeam1 < randomTeam2)
-                    {
-                        tempTopBracket.RemoveAt(randomTeam1);
-                        tempTopBracket.RemoveAt(randomTeam2 - 1);
-                    }
-                    else
-                    {
-                        tempTopBracket.RemoveAt(randomTeam1);
-                        tempTopBracket.RemoveAt(randomTeam2);
+                        top.WriteLine(tempTopBracket[randomTeam1] + ";" + tempTopBracket[randomTeam2] + ";" +
+                                      killsTeam1 + ";" + killsTeam2);
+
+
+                        if (randomTeam1 < randomTeam2)
+                        {
+                            tempTopBracket.RemoveAt(randomTeam1);
+                            tempTopBracket.RemoveAt(randomTeam2 - 1);
+                        }
+                        else
+                        {
+                            tempTopBracket.RemoveAt(randomTeam1);
+                            tempTopBracket.RemoveAt(randomTeam2);
+                        }
                     }
                 }
             }
         }
-
-        for (int i = 23; i < 34; i++)
+        catch (Exception e)
         {
-            var tempLowerBracket = new List<String>(lowerBracket);
-            using (StreamWriter lower =
-                   new StreamWriter(directory + league + "/lowerBracket/round-" + i + ".csv"))
+            Console.WriteLine("Can't find the league that is entered.. try again");
+        }
+
+
+        try
+        {
+            for (int i = 23; i < 34; i++)
             {
-                for (int j = 0; j < 3; j++)
+                var tempLowerBracket = new List<String>(lowerBracket);
+                using (StreamWriter lower =
+                       new StreamWriter(directory + league + "/lowerBracket/round-" + i + ".csv"))
                 {
-                    int randomTeam1 = rnd.Next(tempLowerBracket.Count);
-                    int randomTeam2 = rnd.Next(tempLowerBracket.Count);
-                    while (randomTeam1 == randomTeam2)
+                    for (int j = 0; j < 3; j++)
                     {
-                        randomTeam2 = rnd.Next(tempLowerBracket.Count);
-                    }
+                        int randomTeam1 = rnd.Next(tempLowerBracket.Count);
+                        int randomTeam2 = rnd.Next(tempLowerBracket.Count);
+                        while (randomTeam1 == randomTeam2)
+                        {
+                            randomTeam2 = rnd.Next(tempLowerBracket.Count);
+                        }
 
-                    int killsTeam1 = rnd.Next(25);
-                    int killsTeam2 = rnd.Next(25);
-                    while (killsTeam1 == killsTeam2)
-                    {
-                        killsTeam2 = rnd.Next(25);
-                    }
+                        int killsTeam1 = rnd.Next(25);
+                        int killsTeam2 = rnd.Next(25);
+                        while (killsTeam1 == killsTeam2)
+                        {
+                            killsTeam2 = rnd.Next(25);
+                        }
 
-                    lower.WriteLine(tempLowerBracket[randomTeam1] + ";" + tempLowerBracket[randomTeam2] + ";" +
-                                    killsTeam1 + ";" + killsTeam2);
-                    
+                        lower.WriteLine(tempLowerBracket[randomTeam1] + ";" + tempLowerBracket[randomTeam2] + ";" +
+                                        killsTeam1 + ";" + killsTeam2);
 
-                    if (randomTeam1 < randomTeam2)
-                    {
-                        tempLowerBracket.RemoveAt(randomTeam1);
-                        tempLowerBracket.RemoveAt(randomTeam2 - 1);
-                    }
-                    else
-                    {
-                        tempLowerBracket.RemoveAt(randomTeam1);
-                        tempLowerBracket.RemoveAt(randomTeam2);
+
+                        if (randomTeam1 < randomTeam2)
+                        {
+                            tempLowerBracket.RemoveAt(randomTeam1);
+                            tempLowerBracket.RemoveAt(randomTeam2 - 1);
+                        }
+                        else
+                        {
+                            tempLowerBracket.RemoveAt(randomTeam1);
+                            tempLowerBracket.RemoveAt(randomTeam2);
+                        }
                     }
                 }
             }
+        }
+        catch (Exception e)
+        {
+            Console.WriteLine("Try a differend league, this one doesnt exist.");
         }
     }
 
